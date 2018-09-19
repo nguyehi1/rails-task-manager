@@ -1,7 +1,14 @@
-<h2>Title: <%= @task.title %></h2>
+<h4>Title: <%= @task.title %></h4>
 <ul>
   <li>Details: <%= @task.details %></li>
-  <li>Status-completed: <%= @task.completed %></li>
+  <li>Status:
+    <% if @task.completed %>
+      <%= "Completed" %>
+    <% else %>
+      <%= "Outstanding" %>
+    <% end %>
+
+  </li>
 </ul>
 
 <%= link_to "Back to Tasks", tasks_path %>
