@@ -1,3 +1,5 @@
+<div class="container">
+
 <h4>Title: <%= @task.title %></h4>
 <ul>
   <li>Details: <%= @task.details %></li>
@@ -9,6 +11,10 @@
     <% end %>
 
   </li>
+  
+  <li>Deadline: <%= @task.deadline %></li>
+
 </ul>
 
 <%= link_to "Back to Tasks", tasks_path %>
+</div>
