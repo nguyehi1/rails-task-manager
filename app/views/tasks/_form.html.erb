@@ -1,4 +1,4 @@
-<%= simple_form_for @task, method: "get" do |f| %>
+<%= simple_form_for @task do |f| %>
   <div class="form-group">
     <%= f.label :title, "Enter new task" %>
     <%= f.text_field :title, class: 'form-control' %>

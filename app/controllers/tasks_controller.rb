@@ -45,21 +45,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :details, :completed)
+    params.require(:task).permit(:title, :details, :completed, :deadline)
   end
 end
-
-# INDEX
-# As a user, I can list tasks
-
-# SHOW
-# As a user, I can view the details of a task
-
-# CREATE
-# As a user, I can add a new task
-
-# EDIT
-# As a user, I can edit a task (mark as completed / update title & details)
-
-# REMOVE
-# As a user, I can remove a task
