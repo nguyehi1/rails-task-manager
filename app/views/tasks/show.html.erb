@@ -1,17 +1,21 @@
-<h4>Title: <%= @task.title %></h4>
-<ul>
-  <li>Details: <%= @task.details %></li>
-  <li>Status:
-    <% if @task.completed %>
-      <%= "Completed" %>
-    <% else %>
-      <%= "Outstanding" %>
-    <% end %>
+<div class="container-box">
+  <h4>Title: <%= @task.title %></h4>
+  <ul>
+    <li>Details: <%= @task.details %></li>
+    <li>Status:
+      <% if @task.completed %>
+        <%= "Completed" %>
+      <% else %>
+        <%= "Outstanding" %>
+      <% end %>
+    </li>
+    <li>Deadline: <%= @task.deadline %></li>
+    <li>Time remaining:
+      <% start_time = Time.now.strftime("%Y-%m-%d") %>
+      <% end_time   =  @task.deadline %>
+      <%= distance_of_time_in_words(start_time, end_time)%>
+    </li>
+  </ul>
 
-  </li>
-
-  <li>Deadline: <%= @task.deadline %></li>
-
-</ul>
-
-<%= link_to "Back to Tasks", tasks_path %>
+  <%= link_to "Back to Tasks", tasks_path %>
+</div>
